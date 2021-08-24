@@ -3,9 +3,7 @@
 # Add steps that publish symbols, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
 
-trigger:
-- master
-  #the branch you are building
+
 
 pool:
   vmImage: 'windows-latest'
@@ -32,7 +30,7 @@ stages:
         restoreSolution: '$(solution)' 
         #The path to the solution, packages.config, or project.json file that references the packages to be restored.
      - task: VSBuild@1
-     #to build with MSBuild and set the Visual Studio version property
+       #to build with MSBuild and set the Visual Studio version property
        inputs:
         solution: '$(solution)'
         msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
