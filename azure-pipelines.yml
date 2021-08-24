@@ -11,8 +11,11 @@ pool:
 
 variables:
   solution: '**/*.sln'
+  # the soultion you want to build  `**.sln` searches for all .sln files in all subdirectories.
   buildPlatform: 'Any CPU'
+  # Specify the platform you want to build such as Win32, x86, x64 or any cpu
   buildConfiguration: 'Release'
+  #Specify the configuration you want to build such as debug or release.
 
 stages:
 - stage: build
@@ -20,13 +23,18 @@ stages:
   - job: buildJob
     steps:
      - task: NuGetToolInstaller@1
+     #Acquires a specific version of NuGet from the internet or the tools cache and adds it to the PATH.
      - task: NuGetCommand@2
+      # Restore, pack, or push NuGet packages, or run a NuGet command.
        inputs:
-        restoreSolution: '$(solution)'
+        restoreSolution: '$(solution)' 
+        #The path to the solution, packages.config, or project.json file that references the packages to be restored.
      - task: VSBuild@1
+     #to build with MSBuild and set the Visual Studio version property
        inputs:
         solution: '$(solution)'
         msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+        # to pass additional arguments to MSBuild.
         platform: '$(buildPlatform)'
         configuration: '$(buildConfiguration)'
 
@@ -36,6 +44,7 @@ stages:
     steps:
 
      - task: VSTest@2
+     # Run unit and functional tests (Selenium, Appium, Coded UI test, etc.) using the Visual Studio Test (VsTest) runner.
        inputs:
         platform: '$(buildPlatform)'
         configuration: '$(buildConfiguration)'
