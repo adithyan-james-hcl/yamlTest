@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "userActivityLog", "userActi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "userActivityLogTest", "userActivityLogTests\userActivityLogTest.csproj", "{BF696E32-8DD6-4BC3-889F-14EE8FCA5986}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{854388E3-1222-4182-AF39-486CAA498E09}"
+	ProjectSection(SolutionItems) = preProject
+		samplePowerShellScript.ps1 = samplePowerShellScript.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
