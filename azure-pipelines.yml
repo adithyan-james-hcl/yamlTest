@@ -41,7 +41,7 @@ stages:
         configuration: '$(buildConfiguration)'
      - powershell: |
         " running PowerShell on a pipeline agent "   
-        $(scriptVariable)
+        "another line of ps"
      
 
 - stage: test
