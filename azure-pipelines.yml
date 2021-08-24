@@ -30,9 +30,9 @@ stages:
         platform: '$(buildPlatform)'
         configuration: '$(buildConfiguration)'
 
-- stage: build
+- stage: test
   jobs:
-  - job: buildJob
+  - job: testJob
     steps:
 
      - task: VSTest@2
