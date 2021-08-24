@@ -39,6 +39,10 @@ stages:
         # to pass additional arguments to MSBuild.
         platform: '$(buildPlatform)'
         configuration: '$(buildConfiguration)'
+     - powershell: |
+        " running PowerShell on a pipeline agent "   
+        $(scriptVariable)
+     
 
 - stage: test
   jobs:
