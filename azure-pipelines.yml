@@ -5,9 +5,11 @@
 
 trigger:
 - master
+  #the branch you are building
 
 pool:
   vmImage: 'windows-latest'
+  #the type of vm your code will run on
 
 variables:
   solution: '**/*.sln'
