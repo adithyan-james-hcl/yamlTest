@@ -4,7 +4,9 @@
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
 
 
-
+trigger:
+- master
+  #the branch you are building
 pool:
   vmImage: 'windows-latest'
   #the type of vm your code will run on
