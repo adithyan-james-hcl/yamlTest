@@ -38,8 +38,8 @@ stages:
         solution: '**/*.sln'
         msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
         # to pass additional arguments to MSBuild.
-        platform: $(buildPlatform)
-        configuration: $(buildConfiguration)
+        platform: '$(buildPlatform)'
+        configuration: '$(buildConfiguration)'
      - powershell: |
         " running PowerShell on a pipeline agent "   
         "another line of ps"
