@@ -11,7 +11,8 @@ pool:
   vmImage: 'windows-latest'
   #the type of vm your code will run on
 
-#variables:
+variables:
+  - group: varGRoup
   #solution: '**/*.sln'
   # the soultion you want to build  `**.sln` searches for all .sln files in all subdirectories.
   #buildPlatform: 'Any CPU'
