@@ -14,9 +14,9 @@ pool:
 variables:
   solution: '**/*.sln'
   # the soultion you want to build  `**.sln` searches for all .sln files in all subdirectories.
-  buildPlatform: 'Any CPU'
+  #buildPlatform: 'Any CPU'
   # Specify the platform you want to build such as Win32, x86, x64 or any cpu
-  buildConfiguration: 'Release'
+  #buildConfiguration: 'Release'
   #Specify the configuration you want to build such as debug or release.
 
 stages:
