@@ -11,8 +11,8 @@ pool:
   vmImage: 'windows-latest'
   #the type of vm your code will run on
 
-variables:
-  solution: '**/*.sln'
+#variables:
+  #solution: '**/*.sln'
   # the soultion you want to build  `**.sln` searches for all .sln files in all subdirectories.
   #buildPlatform: 'Any CPU'
   # Specify the platform you want to build such as Win32, x86, x64 or any cpu
@@ -42,7 +42,10 @@ stages:
      - powershell: |
         " running PowerShell on a pipeline agent "   
         "another line of ps"
-     
+        ${env:SCRIPTVARIABLE} 
+
+
+
 
 - stage: test
   jobs:
