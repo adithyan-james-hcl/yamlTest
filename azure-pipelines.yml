@@ -30,12 +30,12 @@ stages:
      - task: NuGetCommand@2
       # Restore, pack, or push NuGet packages, or run a NuGet command.
        inputs:
-        restoreSolution: $(solution) 
+        restoreSolution: '**/*.sln' 
         #The path to the solution, packages.config, or project.json file that references the packages to be restored.
      - task: VSBuild@1
        #to build with MSBuild and set the Visual Studio version property
        inputs:
-        solution: $(solution)
+        solution: '**/*.sln'
         msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
         # to pass additional arguments to MSBuild.
         platform: $(buildPlatform)
